@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // State
     let currentSlide = 1;
-    const totalSlides = 14;
+    const totalSlides = 15;
     let notesOpen = false;
     let slideChart = null;
 
@@ -174,8 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Interactive Trigger Animations
     function triggerSlideAnimations(slideNum) {
-        // Reset Slide 5 (Estratégia de Treinamento) chart animations if not on Slide 5
-        if (slideNum === 5) {
+        // Reset Slide 6 (Estratégia de Treinamento) chart animations if not on Slide 6
+        if (slideNum === 6) {
             localBar.style.width = '0%';
             cloudBar.style.width = '0%';
             setTimeout(() => {
@@ -199,8 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Initialize Slide 6 training curves chart
-        if (slideNum === 6) {
+        // Initialize Slide 7 training curves chart
+        if (slideNum === 7) {
             setTimeout(() => {
                 initSlideChart();
             }, 100);
@@ -208,8 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // Auto-play video when entering Slide 8
-        if (slideNum === 8) {
+        // Auto-play video when entering Slide 9
+        if (slideNum === 9) {
             const video = document.getElementById('demo-video');
             if (video) {
                 video.currentTime = 0;
