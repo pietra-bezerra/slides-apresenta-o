@@ -204,8 +204,49 @@
                     </div>
                 </section>
 
-                <!-- Slide 4: Conceitos e Labelização de Dados -->
+                <!-- Slide 4: Roboflow & Base de Dados -->
                 <section class="slide" id="slide-4" data-slide="4">
+                    <div class="slide-content grid-split">
+                        <div class="slide-text">
+                            <div class="badge red-badge">BASE DE DADOS</div>
+                            <h2 class="slide-title">Roboflow: Gestão de Dados</h2>
+                            <p class="subtitle">Coleta massiva e refinamento técnico</p>
+
+                            <div class="divider"></div>
+
+                            <ul class="bullet-list">
+                                <li>
+                                    <strong class="highlight-text">Trabalho em Conjunto:</strong>
+                                    <span>Um processo de meses de cooperação mútua para atingir o volume e a qualidade necessária para o treinamento da IA.</span>
+                                </li>
+                                <li>
+                                    <strong class="highlight-text">+50.000 Fotos:</strong>
+                                    <span>Alcançamos a marca de mais de 50 mil imagens catalogadas e rotuladas, garantindo um dataset robusto.</span>
+                                </li>
+                                <li>
+                                    <strong class="highlight-text">Captura via Câmeras Locais:</strong>
+                                    <span>A grande maioria das fotos utilizadas foi capturada diretamente pelas câmeras disponibilizadas para o projeto, refletindo o cenário real da fábrica.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slide-visual center-flex">
+                            <div class="visual-card mockup-card" style="width: 100%; max-width: 520px;">
+                                <div class="mockup-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="mockup-title">DATASET NO ROBOFLOW</span>
+                                </div>
+                                <div class="mockup-body" style="background: #0b0f19; aspect-ratio: auto;">
+                                    <img src="assets/roboflow_dataset.png" alt="Roboflow Dataset Examples" style="width: 100%; height: auto; display: block; border-radius: 0 0 12px 12px; cursor: zoom-in;" onclick="zoomImage(this)" title="Clique para ampliar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 5: Conceitos e Labelização de Dados -->
+                <section class="slide" id="slide-5" data-slide="5">
                     <div class="slide-content grid-split">
                         <div class="slide-text">
                             <div class="badge red-badge">PREPARAÇÃO DA IA</div>
@@ -259,47 +300,6 @@
                                     <p style="font-size: 0.82rem; line-height: 1.4; color: var(--text-secondary);">
                                         Multiplicamos o poder do nosso dataset inserindo ruídos, variações de contraste
                                         de solda e inclinação para evitar que o modelo falhe na fábrica real.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Slide 5: Roboflow & Base de Dados -->
-                <section class="slide" id="slide-5" data-slide="5">
-                    <div class="slide-content grid-split">
-                        <div class="slide-text">
-                            <div class="badge red-badge">BASE DE DADOS</div>
-                            <h2 class="slide-title">Roboflow: Gestão de Dados</h2>
-                            <p class="subtitle">Coleta massiva e refinamento técnico</p>
-
-                            <div class="divider"></div>
-
-                            <ul class="bullet-list">
-                                <li>
-                                    <strong class="highlight-text">Trabalho em Conjunto:</strong>
-                                    <span>Um processo de meses de cooperação mútua para atingir o volume e a qualidade necessária para o treinamento da IA.</span>
-                                </li>
-                                <li>
-                                    <strong class="highlight-text">+50.000 Fotos:</strong>
-                                    <span>Alcançamos a marca de mais de 50 mil imagens catalogadas e rotuladas, garantindo um dataset robusto.</span>
-                                </li>
-                                <li>
-                                    <strong class="highlight-text">Captura via Câmeras Locais:</strong>
-                                    <span>A grande maioria das fotos utilizadas foi capturada diretamente pelas câmeras disponibilizadas para o projeto, refletindo o cenário real da fábrica.</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="slide-visual center-flex">
-                            <div class="visual-card mockup-card" style="width: 100%; max-width: 520px;">
-                                <div class="mockup-header">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                    <span class="mockup-title">DATASET NO ROBOFLOW</span>
-                                </div>
-                                <div class="mockup-body" style="background: #0b0f19; aspect-ratio: auto;">
-                                    <img src="assets/roboflow_dataset.png" alt="Roboflow Dataset Examples" style="width: 100%; height: auto; display: block; border-radius: 0 0 12px 12px; cursor: zoom-in;" onclick="zoomImage(this)" title="Clique para ampliar">
                                 </div>
                             </div>
                         </div>
@@ -555,18 +555,30 @@
                             </ul>
 
                             <!-- Botões de Alternar Mídia -->
-                            <div style="display: flex; gap: 10px; margin-top: 10px;">
-                                <button class="action-btn active" id="btn-show-video" onclick="switchDemoMedia('video')"
+                            <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                                <button class="action-btn active" id="btn-show-video-1" onclick="switchDemoMedia('video1')"
                                     style="font-size: 0.8rem; padding: 6px 12px; background: var(--primary-red); border-color: var(--primary-red); cursor: pointer; transition: all 0.2s ease;"
                                     onmouseover="if(this.classList.contains('active')){this.style.background='#b8020f';this.style.borderColor='#b8020f';}else{this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';this.style.color='white';}"
                                     onmouseout="if(this.classList.contains('active')){this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';}else{this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='';}">
-                                    <span>🎥 Ver Vídeo</span>
+                                    <span>🎥 Ver Vídeo 1</span>
+                                </button>
+                                <button class="action-btn" id="btn-show-video-2" onclick="switchDemoMedia('video2')"
+                                    style="font-size: 0.8rem; padding: 6px 12px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08); cursor: pointer; transition: all 0.2s ease;"
+                                    onmouseover="if(this.classList.contains('active')){this.style.background='#b8020f';this.style.borderColor='#b8020f';}else{this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';this.style.color='white';}"
+                                    onmouseout="if(this.classList.contains('active')){this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';}else{this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='';}">
+                                    <span>🎥 Ver Vídeo 2</span>
                                 </button>
                                 <button class="action-btn" id="btn-show-photos" onclick="switchDemoMedia('photos')"
                                     style="font-size: 0.8rem; padding: 6px 12px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08); cursor: pointer; transition: all 0.2s ease;"
                                     onmouseover="if(this.classList.contains('active')){this.style.background='#b8020f';this.style.borderColor='#b8020f';}else{this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';this.style.color='white';}"
                                     onmouseout="if(this.classList.contains('active')){this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';}else{this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='';}">
                                     <span>🖼️ Ver Fotos</span>
+                                </button>
+                                <button class="action-btn" id="btn-zoom-video" onclick="zoomVideo()"
+                                     style="font-size: 0.8rem; padding: 6px 12px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08); cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 4px;"
+                                     onmouseover="this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';this.style.color='white';"
+                                     onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='';">
+                                     <span>⛶ Tela Cheia</span>
                                 </button>
                             </div>
                         </div>
@@ -585,12 +597,8 @@
 
                                     <!-- Player de Vídeo -->
                                     <div id="demo-video-wrapper" style="width: 100%; height: 100%; display: block;">
-                                        <video id="demo-video" controls loop autoplay muted
-                                            style="width: 100%; height: 100%; object-fit: cover;">
-                                            <source src="assets/demo_oculos_yolo_raw_final_20260529_190523.mp4"
-                                                type="video/mp4">
-                                            Seu navegador não suporta vídeos.
-                                        </video>
+                                        <iframe id="demo-video-iframe" src="https://drive.google.com/file/d/1qAtAI0v7K6tZj_t2gzaaHEU3yBMZ5nlE/preview"
+                                            style="width: 100%; height: 100%; border: none;" allow="autoplay"></iframe>
                                     </div>
 
                                     <!-- Galeria de Fotos (Inicialmente Oculta) -->
@@ -1091,8 +1099,8 @@
                     <li onclick="jumpToSlide(1)" class="summary-item" data-target="1">1. Introdução</li>
                     <li onclick="jumpToSlide(2)" class="summary-item" data-target="2">2. Cérebro (YOLOv8)</li>
                     <li onclick="jumpToSlide(3)" class="summary-item" data-target="3">3. Força-Tarefa de Dados</li>
-                    <li onclick="jumpToSlide(4)" class="summary-item" data-target="4">4. Processo de Labelização</li>
-                    <li onclick="jumpToSlide(5)" class="summary-item" data-target="5">5. Roboflow & Dados</li>
+                    <li onclick="jumpToSlide(4)" class="summary-item" data-target="4">4. Roboflow & Dados</li>
+                    <li onclick="jumpToSlide(5)" class="summary-item" data-target="5">5. Processo de Labelização</li>
                     <li onclick="jumpToSlide(6)" class="summary-item" data-target="6">6. Estratégia de Treino</li>
                     <li onclick="jumpToSlide(7)" class="summary-item" data-target="7">7. Desempenho de Detecção</li>
                     <li onclick="jumpToSlide(8)" class="summary-item" data-target="8">8. Entendendo as Métricas</li>
@@ -1158,7 +1166,19 @@
 
             <!-- Slide 4 Notes -->
             <div class="note-item" id="note-4">
-                <div class="note-badge">Slide 4: Labelização</div>
+                <div class="note-badge">Slide 4: Roboflow & Fotos</div>
+                <p class="note-text">
+                    "Para consolidar esse volume massivo de informações, utilizamos a plataforma Roboflow. Foi um 
+                    processo conjunto de meses de dedicação para atingir a marca de mais de 50 mil fotos catalogadas. 
+                    É importante destacar que a grande maioria dessas imagens foi capturada pelas próprias câmeras 
+                    que nos foram disponibilizadas na fábrica, o que permitiu que a IA aprendesse com o cenário real 
+                    onde o sistema será de fato operado."
+                </p>
+            </div>
+
+            <!-- Slide 5 Notes -->
+            <div class="note-item" id="note-5">
+                <div class="note-badge">Slide 5: Labelização</div>
                 <p class="note-text">
                     "Com o nosso banco de dados volumoso em mãos, precisamos estruturar os dados para a inteligência
                     artificial. Esse processo é chamado de Labelização ou rotulagem, onde informamos à IA exatamente
@@ -1168,18 +1188,6 @@
                     dados. Essa técnica gera novas variações das fotos reais rotacionando, variando brilho e gerando
                     contrastes parecidos com os flashes de solda. Isso prepara o modelo de IA para ser resiliente a
                     qualquer alteração de iluminação ou ângulo dentro da fábrica real."
-                </p>
-            </div>
-
-            <!-- Slide 5 Notes -->
-            <div class="note-item" id="note-5">
-                <div class="note-badge">Slide 5: Roboflow & Fotos</div>
-                <p class="note-text">
-                    "Para consolidar esse volume massivo de informações, utilizamos a plataforma Roboflow. Foi um 
-                    processo conjunto de meses de dedicação para atingir a marca de mais de 50 mil fotos catalogadas. 
-                    É importante destacar que a grande maioria dessas imagens foi capturada pelas próprias câmeras 
-                    que nos foram disponibilizadas na fábrica, o que permitiu que a IA aprendesse com o cenário real 
-                    onde o sistema será de fato operado."
                 </p>
             </div>
 
@@ -1380,6 +1388,26 @@
 
         <!-- Close Button -->
         <span onclick="closeZoomModal()"
+            style="position: absolute; top: 30px; right: 40px; color: rgba(255,255,255,0.6); font-size: 2.5rem; font-weight: 300; cursor: pointer; z-index: 1003; transition: 0.2s; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;"
+            onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">&times;</span>
+    </div>
+
+    <!-- Video Zoom Modal -->
+    <div id="videoZoomModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(11,15,25,0.95); z-index: 1000; align-items: center; justify-content: center; user-select: none;">
+        <!-- Modal Backdrop click triggers close -->
+        <div onclick="closeVideoModal()"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1001;"></div>
+
+        <!-- Controls & Video Container -->
+        <div class="zoom-container"
+            style="position: relative; z-index: 1002; display: flex; flex-direction: column; align-items: center; gap: 15px; width: 90%; max-width: 960px; height: 80vh;">
+            <iframe id="zoomModalIframe" src=""
+                style="width: 100%; height: 100%; border: none; border-radius: 12px; border: 2px solid rgba(255,255,255,0.08); box-shadow: 0 30px 60px rgba(0,0,0,0.6);" allow="autoplay"></iframe>
+        </div>
+
+        <!-- Close Button -->
+        <span onclick="closeVideoModal()"
             style="position: absolute; top: 30px; right: 40px; color: rgba(255,255,255,0.6); font-size: 2.5rem; font-weight: 300; cursor: pointer; z-index: 1003; transition: 0.2s; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;"
             onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">&times;</span>
     </div>

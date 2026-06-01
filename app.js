@@ -208,12 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // Auto-play video when entering Slide 9
+        // Auto-play/Reload video when entering Slide 9
         if (slideNum === 9) {
-            const video = document.getElementById('demo-video');
-            if (video) {
-                video.currentTime = 0;
-                video.play().catch(err => console.log("Autoplay mitigado: ", err));
+            const iframe = document.getElementById('demo-video-iframe');
+            if (iframe) {
+                iframe.src = "https://drive.google.com/file/d/1qAtAI0v7K6tZj_t2gzaaHEU3yBMZ5nlE/preview";
             }
         }
     }
@@ -342,32 +341,88 @@ document.addEventListener('DOMContentLoaded', () => {
         const videoWrapper = document.getElementById('demo-video-wrapper');
         const photosWrapper = document.getElementById('demo-photos-wrapper');
         const mediaTitle = document.getElementById('demo-media-title');
-        const btnVideo = document.getElementById('btn-show-video');
+        const btnVideo1 = document.getElementById('btn-show-video-1');
+        const btnVideo2 = document.getElementById('btn-show-video-2');
         const btnPhotos = document.getElementById('btn-show-photos');
+        const btnZoomVideo = document.getElementById('btn-zoom-video');
+        const iframe = document.getElementById('demo-video-iframe');
         
         if (!videoWrapper || !photosWrapper) return;
         
-        if (type === 'video') {
+        const setActiveButton = (activeBtn) => {
+            [btnVideo1, btnVideo2, btnPhotos].forEach(btn => {
+                if (btn) {
+                    btn.classList.remove('active');
+                    btn.style.background = 'rgba(255,255,255,0.05)';
+                    btn.style.borderColor = 'rgba(255,255,255,0.08)';
+                    btn.style.color = '';
+                }
+            });
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.style.background = 'var(--primary-red)';
+                activeBtn.style.borderColor = 'var(--primary-red)';
+                activeBtn.style.color = 'white';
+            }
+        };
+
+        if (type === 'video1') {
             videoWrapper.style.display = 'block';
             photosWrapper.style.display = 'none';
-            mediaTitle.textContent = 'MONITORAMENTO EM VÍDEO';
-            btnVideo.classList.add('active');
-            btnPhotos.classList.remove('active');
+            mediaTitle.textContent = 'MONITORAMENTO EM VÍDEO 1';
+            setActiveButton(btnVideo1);
+            if (btnZoomVideo) btnZoomVideo.style.display = 'inline-flex';
             
-            // Play video automatically
-            const video = document.getElementById('demo-video');
-            if (video) video.play();
+            if (iframe) {
+                iframe.src = "https://drive.google.com/file/d/1qAtAI0v7K6tZj_t2gzaaHEU3yBMZ5nlE/preview";
+            }
+        } else if (type === 'video2') {
+            videoWrapper.style.display = 'block';
+            photosWrapper.style.display = 'none';
+            mediaTitle.textContent = 'MONITORAMENTO EM VÍDEO 2';
+            setActiveButton(btnVideo2);
+            if (btnZoomVideo) btnZoomVideo.style.display = 'inline-flex';
+            
+            if (iframe) {
+                iframe.src = "https://drive.google.com/file/d/1h0Vf95C2sgDl4z6xk4fLhwOEWOIHIAAy/preview";
+            }
         } else {
             videoWrapper.style.display = 'none';
             photosWrapper.style.display = 'block'; // alterado de grid para block devido ao carrossel
             mediaTitle.textContent = 'GALERIA DE CAPTURAS';
-            btnPhotos.classList.add('active');
-            btnVideo.classList.remove('active');
+            setActiveButton(btnPhotos);
+            if (btnZoomVideo) btnZoomVideo.style.display = 'none';
             
-            // Pause video to save resources
-            const video = document.getElementById('demo-video');
-            if (video) video.pause();
+            // Clear iframe source to stop video/audio in background
+            if (iframe) iframe.src = "";
         }
+    };
+
+    window.zoomVideo = function() {
+        const modal = document.getElementById('videoZoomModal');
+        const modalIframe = document.getElementById('zoomModalIframe');
+        const iframe = document.getElementById('demo-video-iframe');
+        if (!modal || !modalIframe || !iframe) return;
+        
+        modalIframe.src = iframe.src;
+        modal.style.display = 'flex';
+        
+        // Clear main player to avoid playing two tracks simultaneously
+        iframe.src = "";
+    };
+
+    window.closeVideoModal = function() {
+        const modal = document.getElementById('videoZoomModal');
+        const modalIframe = document.getElementById('zoomModalIframe');
+        const iframe = document.getElementById('demo-video-iframe');
+        if (!modal || !modalIframe) return;
+        
+        // Restore the video to the main slide player
+        if (iframe && modalIframe.src) {
+            iframe.src = modalIframe.src;
+        }
+        modalIframe.src = "";
+        modal.style.display = 'none';
     };
 
     // Expose switchSlide6Mode function globally for the Slide 6 toggle
@@ -488,14 +543,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Keyboard navigation in modal and ESC key to close
     document.addEventListener('keydown', (e) => {
-        const modal = document.getElementById('imageZoomModal');
-        if (modal && modal.style.display === 'flex') {
+        const imgModal = document.getElementById('imageZoomModal');
+        const videoModal = document.getElementById('videoZoomModal');
+        
+        if (imgModal && imgModal.style.display === 'flex') {
             if (e.key === 'Escape') {
                 closeZoomModal();
             } else if (e.key === 'ArrowRight') {
                 navigateModalGallery(1);
             } else if (e.key === 'ArrowLeft') {
                 navigateModalGallery(-1);
+            }
+            e.stopPropagation(); // prevent moving parent slides
+        } else if (videoModal && videoModal.style.display === 'flex') {
+            if (e.key === 'Escape') {
+                closeVideoModal();
             }
             e.stopPropagation(); // prevent moving parent slides
         }
