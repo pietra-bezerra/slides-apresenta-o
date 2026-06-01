@@ -891,6 +891,56 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
 }
 
+/* --- Slide 9: Botões de Mídia (Ver Vídeo / Ver Fotos) --- */
+#slide-9 .action-btn {
+    transition: var(--transition-fast);
+}
+
+/* Ativo: fundo vermelho persistente */
+#slide-9 .action-btn.active {
+    background-color: var(--primary-red) !important;
+    border-color: var(--primary-red) !important;
+    color: #FFFFFF !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+/* Inativo (no slide 9): manter aparência escura/neutra para destacar o ativo) */
+#slide-9 .action-btn:not(.active) {
+    background-color: rgba(0,0,0,0.55) !important;
+    border-color: rgba(255,255,255,0.06) !important;
+    color: #FFFFFF !important;
+}
+
+/* Hover: não sobrescrever o estado ativo; em inativos, mostrar destaque ao pairar */
+#slide-9 .action-btn:not(.active):hover {
+    background-color: rgba(227, 6, 19, 0.95) !important;
+    border-color: var(--primary-red) !important;
+    color: #fff !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+/* --- Mobile: mostrar o painel de Roteiro automaticamente e ajustar layout --- */
+@media (max-width: 600px) {
+    .speaker-notes-panel {
+        margin-right: 0 !important; /* garantir visibilidade */
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 45%;
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.35);
+        z-index: 400;
+    }
+
+    /* Evita que a área principal fique coberta sem possibilidade de rolagem */
+    .app-container.notes-open {
+        padding-bottom: 45%;
+    }
+}
+
 /* --- Speaker Notes Panel (Sidebar) --- */
 .speaker-notes-panel {
     width: var(--sidebar-width);
