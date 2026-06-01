@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
         }
 
-        // Reset and trigger timeline transition on Slide 3
-        if (slideNum === 3) {
+        // Reset and trigger timeline transition on Slide 5
+        if (slideNum === 5) {
             const points = document.querySelectorAll('.timeline-point');
             points.forEach((point, i) => {
                 point.style.opacity = '0';
@@ -277,8 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggle.setAttribute('title', 'Alternar Tema Escuro');
         }
         
-        // Re-render Slide 5 chart with updated colors if visible
-        if (currentSlide === 5) {
+        // Re-render Slide 7 chart with updated colors if visible
+        if (currentSlide === 7) {
             initSlideChart();
         }
     });
