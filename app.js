@@ -532,5 +532,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, true); // Use capture phase to intercept slider keydowns
 
     // Initialize slide deck
+    // Auto-open speaker notes on small screens (mobile)
+    if (window.innerWidth <= 600) {
+        notesOpen = true;
+        appContainer.classList.add('notes-open');
+    }
+
     updateSlide(1);
 });
