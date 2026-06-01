@@ -373,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setActiveButton(btnVideo1);
             if (btnZoomVideo) btnZoomVideo.style.display = 'inline-flex';
             
+            showVideoSkeleton();
             if (iframe) {
                 iframe.src = "https://drive.google.com/file/d/1qAtAI0v7K6tZj_t2gzaaHEU3yBMZ5nlE/preview";
             }
@@ -383,6 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setActiveButton(btnVideo2);
             if (btnZoomVideo) btnZoomVideo.style.display = 'inline-flex';
             
+            showVideoSkeleton();
             if (iframe) {
                 iframe.src = "https://drive.google.com/file/d/1h0Vf95C2sgDl4z6xk4fLhwOEWOIHIAAy/preview";
             }
@@ -562,6 +564,24 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation(); // prevent moving parent slides
         }
     }, true); // Use capture phase to intercept slider keydowns
+
+    window.hideVideoSkeleton = function() {
+        const skeleton = document.getElementById('video-skeleton');
+        if (skeleton) {
+            skeleton.style.opacity = '0';
+            setTimeout(() => {
+                skeleton.style.display = 'none';
+            }, 300);
+        }
+    };
+
+    window.showVideoSkeleton = function() {
+        const skeleton = document.getElementById('video-skeleton');
+        if (skeleton) {
+            skeleton.style.display = 'flex';
+            skeleton.style.opacity = '1';
+        }
+    };
 
     // Initialize slide deck
     // Auto-open speaker notes on small screens (mobile)

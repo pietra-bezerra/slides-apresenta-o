@@ -120,10 +120,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px) scale(0.98);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-                visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(60px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     padding: 60px 80px 40px 80px;
     display: flex;
     align-items: center;
@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 .slide.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
     z-index: 2;
 }
 
@@ -490,7 +490,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary-red);
 }
 
-/* --- Timeline Layout (Slide 3) --- */
+/* --- Timeline Layout (Slide 5) --- */
 .timeline-visual {
     display: flex;
     flex-direction: column;
@@ -533,12 +533,15 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-point.current .timeline-dot {
     background-color: var(--primary-red);
     border-color: var(--bg-card);
-    box-shadow: 0 0 0 4px var(--primary-red-glow-strong);
+    box-shadow: 0 0 0 4px var(--primary-red-glow-strong), 0 0 12px var(--primary-red);
+    animation: pulseGlow 2s infinite;
 }
 
 .timeline-content {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 15px 20px;
     border-radius: 12px;
     flex: 1;
@@ -548,6 +551,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .timeline-point.current .timeline-content {
     border-left: 4px solid var(--primary-red);
+    box-shadow: var(--shadow-glow);
 }
 
 .timeline-content h4 {
@@ -559,6 +563,18 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-content p {
     font-size: 0.85rem;
     color: var(--text-secondary);
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0px var(--primary-red-glow-strong), 0 0 5px var(--primary-red);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(227, 6, 19, 0), 0 0 12px var(--primary-red);
+    }
+    100% {
+        box-shadow: 0 0 0 0px rgba(227, 6, 19, 0), 0 0 5px var(--primary-red);
+    }
 }
 
 /* --- Performance Chart (Slide 4) --- */
@@ -1175,6 +1191,25 @@ h1, h2, h3, h4, h5, h6 {
 #imageZoomModal #zoomModalCaption {
     max-width: calc(100vw - 96px);
     text-align: center;
+}
+
+/* --- Skeleton Loader --- */
+.skeleton-loader {
+    transition: opacity 0.3s ease;
+}
+
+.skeleton-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(227, 6, 19, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-red);
+    animation: spin 1s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(227, 6, 19, 0.2);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 
