@@ -373,51 +373,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Expose switchSlide6Mode function globally for the Slide 6 toggle
     window.switchSlide6Mode = function(mode) {
         const btnTecnico = document.getElementById('btn-mode-tecnico');
-        const btnFutebol = document.getElementById('btn-mode-futebol');
         const subtitle = document.getElementById('slide6-subtitle');
-        
         const titlesTecnico = document.querySelectorAll('.mode-title-tecnico');
-        const titlesFutebol = document.querySelectorAll('.mode-title-futebol');
         const descsTecnico = document.querySelectorAll('.mode-desc-tecnico');
-        const descsFutebol = document.querySelectorAll('.mode-desc-futebol');
-        
-        if (!btnTecnico || !btnFutebol || !subtitle) return;
-        
-        if (mode === 'tecnico') {
-            btnTecnico.classList.add('active');
-            btnTecnico.style.background = 'var(--primary-red)';
-            btnTecnico.style.borderColor = 'var(--primary-red)';
-            btnTecnico.style.color = 'white';
-            
-            btnFutebol.classList.remove('active');
-            btnFutebol.style.background = 'rgba(255,255,255,0.05)';
-            btnFutebol.style.borderColor = 'rgba(255,255,255,0.08)';
-            btnFutebol.style.color = 'var(--text-primary)';
-            
-            subtitle.textContent = 'Explicando o comportamento do modelo de forma técnica e descomplicada';
-            
-            titlesTecnico.forEach(el => el.style.display = 'inline');
-            titlesFutebol.forEach(el => el.style.display = 'none');
-            descsTecnico.forEach(el => el.style.display = 'block');
-            descsFutebol.forEach(el => el.style.display = 'none');
-        } else {
-            btnFutebol.classList.add('active');
-            btnFutebol.style.background = 'var(--primary-red)';
-            btnFutebol.style.borderColor = 'var(--primary-red)';
-            btnFutebol.style.color = 'white';
-            
-            btnTecnico.classList.remove('active');
-            btnTecnico.style.background = 'rgba(255,255,255,0.05)';
-            btnTecnico.style.borderColor = 'rgba(255,255,255,0.08)';
-            btnTecnico.style.color = 'var(--text-primary)';
-            
-            subtitle.textContent = 'Explicando o comportamento do modelo com analogias de campo';
-            
-            titlesTecnico.forEach(el => el.style.display = 'none');
-            titlesFutebol.forEach(el => el.style.display = 'inline');
-            descsTecnico.forEach(el => el.style.display = 'none');
-            descsFutebol.forEach(el => el.style.display = 'block');
-        }
+
+        if (!btnTecnico || !subtitle) return;
+
+        btnTecnico.classList.add('active');
+        btnTecnico.style.background = 'var(--primary-red)';
+        btnTecnico.style.borderColor = 'var(--primary-red)';
+        btnTecnico.style.color = 'white';
+
+        subtitle.textContent = 'Explicando o comportamento do modelo de forma técnica e descomplicada';
+
+        titlesTecnico.forEach(el => el.style.display = 'inline');
+        descsTecnico.forEach(el => el.style.display = 'block');
     };
 
     // Summary Panel Toggling
