@@ -408,7 +408,7 @@
                     </div>
                 </section>
 
-                <!-- Slide 8: Analogia do Futebol & Modo Técnico -->
+                <!-- Slide 8: Modo Técnico -->
                 <section class="slide" id="slide-8" data-slide="8">
 
                     <div class="slide-content">
@@ -427,10 +427,6 @@
                                     style="font-size: 0.85rem; padding: 8px 16px; background: var(--primary-red); border-color: var(--primary-red); color: white;">
                                     <span>🔬 Modo Técnico</span>
                                 </button>
-                                <button class="action-btn" id="btn-mode-futebol" onclick="switchSlide6Mode('futebol')"
-                                    style="font-size: 0.85rem; padding: 8px 16px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08);">
-                                    <span>⚽ Modo Futebol</span>
-                                </button>
                             </div>
                         </div>
 
@@ -445,18 +441,11 @@
                                 <div>
                                     <h4 style="font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px;">
                                         <span class="mode-title-tecnico">Precisão (Precision)</span>
-                                        <span class="mode-title-futebol" style="display: none;">Precisão
-                                            (Pontaria)</span>
                                     </h4>
                                     <p class="mode-desc-tecnico"
                                         style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">
                                         De todas as predições de uso de EPI feitas pelo modelo, quantas estavam
                                         realmente corretas? Foca em eliminar os Falsos Positivos (falsos alertas).
-                                    </p>
-                                    <p class="mode-desc-futebol"
-                                        style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; display: none;">
-                                        De todos os chutes que o atacante dá em direção ao gol, quantos realmente
-                                        entram? Alta precisão significa que ele raramente chuta para fora.
                                     </p>
                                 </div>
                             </div>
@@ -470,18 +459,11 @@
                                 <div>
                                     <h4 style="font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px;">
                                         <span class="mode-title-tecnico">Sensibilidade (Recall)</span>
-                                        <span class="mode-title-futebol" style="display: none;">Recall (Presença de
-                                            Área)</span>
                                     </h4>
                                     <p class="mode-desc-tecnico"
                                         style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">
                                         De todos os colaboradores sem óculos que realmente estavam presentes, quantos o
                                         modelo detectou? Foca em eliminar os Falsos Negativos (deixar passar infrações).
-                                    </p>
-                                    <p class="mode-desc-futebol"
-                                        style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; display: none;">
-                                        De todos os cruzamentos na área (infrações), em quantos o atacante chega para
-                                        cabecear? Alto recall garante que nenhuma oportunidade seja perdida.
                                     </p>
                                 </div>
                             </div>
@@ -495,18 +477,11 @@
                                 <div>
                                     <h4 style="font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px;">
                                         <span class="mode-title-tecnico">Acurácia (Accuracy)</span>
-                                        <span class="mode-title-futebol" style="display: none;">Acurácia
-                                            (Aproveitamento)</span>
                                     </h4>
                                     <p class="mode-desc-tecnico"
                                         style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">
                                         Taxa de acertos gerais do modelo sobre todas as predições. É a proporção entre a
                                         soma das detecções corretas de EPI e a totalidade das predições realizadas.
-                                    </p>
-                                    <p class="mode-desc-futebol"
-                                        style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; display: none;">
-                                        É a eficiência geral do atleta no jogo: passes corretos, desarmes efetuados e
-                                        chutes certos sobre tudo o que tentou. Sua média total em campo.
                                     </p>
                                 </div>
                             </div>
@@ -520,18 +495,11 @@
                                 <div>
                                     <h4 style="font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px;">
                                         <span class="mode-title-tecnico">mAP50-95</span>
-                                        <span class="mode-title-futebol" style="display: none;">mAP50-95 (Nota do
-                                            Craque)</span>
                                     </h4>
                                     <p class="mode-desc-tecnico"
                                         style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">
                                         Média de precisão calculada sob múltiplos limiares de sobreposição de caixas
                                         (IoU) de 0.50 a 0.95. É o teste de estresse de qualidade mais rigoroso para IA.
-                                    </p>
-                                    <p class="mode-desc-futebol"
-                                        style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; display: none;">
-                                        A nota da partida dada ao jogador considerando todas as jogadas fáceis
-                                        (pênaltis) e difíceis (chutes de longe). O critério mais completo de qualidade.
                                     </p>
                                 </div>
                             </div>
@@ -545,20 +513,12 @@
                                 <div>
                                     <h4 style="font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px;">
                                         <span class="mode-title-tecnico">Curva de Aprendizado / Perda</span>
-                                        <span class="mode-title-futebol" style="display: none;">Curva de Aprendizado
-                                            (Temporada)</span>
                                     </h4>
                                     <p class="mode-desc-tecnico"
                                         style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">
                                         Gráfico do decaimento das funções de custo (Loss) nas épocas. Demonstra a
                                         convergência estatística do otimizador e a estabilização das métricas de
                                         generalização.
-                                    </p>
-                                    <p class="mode-desc-futebol"
-                                        style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; display: none;">
-                                        Pré-temporada do time: no começo há desentrosamento e muitos erros (perda alta).
-                                        Com treinos repetidos (épocas), o time entrosa e as falhas caem para próximo de
-                                        zero.
                                     </p>
                                 </div>
                             </div>
@@ -1261,18 +1221,14 @@
             <!-- Slide 8 Notes -->
             <div class="note-item" id="note-8">
 
-                <div class="note-badge">Slide 8: IA & Futebol</div>
+                <div class="note-badge">Slide 8: Modo Técnico</div>
 
                 <p class="note-text">
-                    "Para que todos consigam entender a beleza e a lógica matemática desses dados, vamos fazer uma
-                    analogia bem simples e divertida usando um jogo de futebol. Imaginem o nosso modelo de IA como um
-                    atacante em campo. A Precisão é a pontaria de chute desse jogador: de cada 10 chutes dele, quase 8
-                    vão direto para o gol sem desviar. O Recall é a sua presença de área e posicionamento: de todos os
-                    cruzamentos difíceis que chegam na grande área, em quantos ele consegue chegar para tentar fazer o
-                    gol? E o mAP50-95 é a nota geral desse craque na partida, considerando jogadas difíceis e fáceis. O
-                    gráfico de aprendizado é a pré-temporada do time: no começo, todos estão desorganizados e errando
-                    passes (perda alta), mas conforme treinam (épocas), o time se entrosa e atinge a performance máxima
-                    estabilizada."
+                    "Explique com clareza técnica o significado das métricas do modelo. Precisão mostra quantas das
+                    detecções de EPI estavam realmente corretas. Recall indica quantos dos casos reais o modelo
+                    conseguiu encontrar. O mAP50-95 representa a qualidade geral do detector sob vários limiares de
+                    sobreposição. O gráfico de aprendizado mostra como o modelo melhora e se estabiliza ao longo das
+                    épocas de treino."
                 </p>
             </div>
 
