@@ -597,11 +597,15 @@
                             <!-- Botões de Alternar Mídia -->
                             <div style="display: flex; gap: 10px; margin-top: 10px;">
                                 <button class="action-btn active" id="btn-show-video" onclick="switchDemoMedia('video')"
-                                    style="font-size: 0.8rem; padding: 6px 12px; background: var(--primary-red); border-color: var(--primary-red);">
+                                    style="font-size: 0.8rem; padding: 6px 12px; background: var(--primary-red); border-color: var(--primary-red); cursor: pointer; transition: all 0.2s ease;"
+                                    onmouseover="if(this.classList.contains('active')){this.style.background='#b8020f';this.style.borderColor='#b8020f';}else{this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';this.style.color='white';}"
+                                    onmouseout="if(this.classList.contains('active')){this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';}else{this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='';}">
                                     <span>🎥 Ver Vídeo</span>
                                 </button>
                                 <button class="action-btn" id="btn-show-photos" onclick="switchDemoMedia('photos')"
-                                    style="font-size: 0.8rem; padding: 6px 12px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08);">
+                                    style="font-size: 0.8rem; padding: 6px 12px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08); cursor: pointer; transition: all 0.2s ease;"
+                                    onmouseover="if(this.classList.contains('active')){this.style.background='#b8020f';this.style.borderColor='#b8020f';}else{this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';this.style.color='white';}"
+                                    onmouseout="if(this.classList.contains('active')){this.style.background='var(--primary-red)';this.style.borderColor='var(--primary-red)';}else{this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='';}">
                                     <span>🖼️ Ver Fotos</span>
                                 </button>
                             </div>
@@ -861,7 +865,7 @@
                             <ul class="bullet-list">
                                 <li>
                                     <strong class="highlight-text">Opção Local (Workstation Dedicada):</strong>
-                                    <span>Requer GPU NVIDIA com arquitetura CUDA (mín. RTX 3080 / A4000), mínimo de 32 GB de RAM, armazenamento NVMe de alta velocidade e suporte a CUDA Toolkit + PyTorch. Risco de obsolescência tecnológica acelerada e alto custo de aquisição e manutenção.</span>
+                                    <span>Requer GPU NVIDIA com arquitetura CUDA (mín. RTX 3080 / A4000), CPU Intel Core i5-12600K ou i5-13600K, mínimo de 32 GB de RAM DDR5, armazenamento NVMe de alta velocidade e suporte a CUDA Toolkit + PyTorch. Risco de obsolescência tecnológica acelerada e alto custo de aquisição e manutenção.</span>
                                 </li>
                                 <li>
                                     <strong class="highlight-text">Opção Híbrida — Recomendada (Google Colab Pro+):</strong>
