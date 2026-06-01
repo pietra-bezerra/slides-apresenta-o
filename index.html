@@ -850,25 +850,22 @@
                         <div class="slide-text">
                             <div class="badge red-badge">VIABILIDADE TÉCNICA</div>
                             <h2 class="slide-title">Estratégia de Processamento</h2>
-                            <p class="subtitle">Análise Comparativa: Hardware Local vs. Modelo Híbrido</p>
+                            <p class="subtitle">Análise Comparativa: Workstation Dedicada vs. Modelo Híbrido em Nuvem</p>
 
                             <div class="divider"></div>
 
                             <p class="description" style="margin-bottom: 20px;">
-                                Para treinar o modelo com as 44.000 imagens, analisamos a rota de compra local contra o
-                                uso híbrido em nuvem (Google Colab Pro Plus).
+                                Para treinar um modelo robusto de visão computacional com +50.000 imagens, analisamos duas estratégias de processamento com seus requisitos técnicos.
                             </p>
 
                             <ul class="bullet-list">
                                 <li>
-                                    <strong class="highlight-text">Opção Local (Alto Custo de Entrada):</strong>
-                                    <span>Compra de GPUs físicas robustas (R$ 8k a R$ 15k). Risco de obsolescência
-                                        tecnológica acelerada.</span>
+                                    <strong class="highlight-text">Opção Local (Workstation Dedicada):</strong>
+                                    <span>Requer GPU NVIDIA com arquitetura CUDA (mín. RTX 3080 / A4000), mínimo de 32 GB de RAM, armazenamento NVMe de alta velocidade e suporte a CUDA Toolkit + PyTorch. Risco de obsolescência tecnológica acelerada e alto custo de aquisição e manutenção.</span>
                                 </li>
                                 <li>
-                                    <strong class="highlight-text">Opção Híbrida (Recomendada):</strong>
-                                    <span>Investimento zero em novos ativos. Treinamento imediato usando
-                                        supercomputadores via notebooks na nuvem.</span>
+                                    <strong class="highlight-text">Opção Híbrida — Recomendada (Google Colab Pro+):</strong>
+                                    <span>Acesso sob demanda a GPUs de última geração (NVIDIA A100/V100) sem aquisição de hardware. Treinamento com suporte a CUDA nativo, escalabilidade imediata e custo operacional controlado por sessão.</span>
                                 </li>
                             </ul>
                         </div>
@@ -884,24 +881,34 @@
                                         <thead>
                                             <tr>
                                                 <th>Critério</th>
-                                                <th>Local (Físico)</th>
+                                                <th>Workstation Local</th>
                                                 <th>Híbrido (Nuvem)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Investimento Ativos</td>
+                                                <td>GPU Necessária</td>
+                                                <td>RTX 3080 / A4000+</td>
+                                                <td style="color: var(--primary-red); font-weight: 700;">A100 / V100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Suporte CUDA</td>
+                                                <td><span class="table-tag warning">Depende do HW</span></td>
+                                                <td><span class="table-tag success">Nativo</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Escalabilidade</td>
+                                                <td><span class="table-tag warning">Limitada</span></td>
+                                                <td><span class="table-tag success">Imediata</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Custo de Aquisição</td>
                                                 <td><span class="table-tag warning">Alto</span></td>
-                                                <td><span class="table-tag success">Zero</span></td>
+                                                <td><span class="table-tag success">Operacional</span></td>
                                             </tr>
                                             <tr>
-                                                <td>Velocidade Startup</td>
-                                                <td>Demorado (Logística)</td>
-                                                <td style="color: var(--primary-red); font-weight: 700;">Imediato</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Risco Técnico</td>
-                                                <td>Alto (Defasagem)</td>
+                                                <td>Risco Obsolescência</td>
+                                                <td>Alto</td>
                                                 <td><span class="table-tag success">Zero</span></td>
                                             </tr>
                                             <tr>
@@ -930,17 +937,16 @@
 
                             <ul class="bullet-list">
                                 <li>
-                                    <strong class="highlight-text">Cinturão de Visão 360º Redundante:</strong>
-                                    <span>Posicionamento espelhado (Frente e Costa) para anular pontos cegos de EPIs
-                                        complexos.</span>
+                                    <strong class="highlight-text">Cobertura Total com PTZ:</strong>
+                                    <span>Mínimo de 8 câmeras IP com movimentação PTZ (Pan-Tilt-Zoom) por área monitorada, garantindo rastreamento dinâmico e eliminação completa de pontos cegos.</span>
                                 </li>
                                 <li>
-                                    <strong class="highlight-text">Investimento por Setor:</strong>
-                                    <span>Infraestrutura IP local de alta resolução.</span>
+                                    <strong class="highlight-text">Posicionamento Estratégico:</strong>
+                                    <span>Câmeras posicionadas em duplas espelhadas (Frente e Costa) com cobertura angular de 180° cada, formando um cinturão de visão 360° redundante por setor.</span>
                                 </li>
                                 <li>
                                     <strong class="highlight-text">Custo Operacional (Nuvem):</strong>
-                                    <span>Créditos de nuvem e armazenamento Drive 2TB.</span>
+                                    <span>Créditos de processamento em nuvem e armazenamento corporativo Drive 2TB para os registros de evidências.</span>
                                 </li>
                             </ul>
                         </div>
@@ -951,9 +957,8 @@
                                     <h3 style="margin-bottom: 5px;">Infraestrutura Local (CapEx)</h3>
                                     <p
                                         style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px;">
-                                        Investimento Único</p>
-                                    <p style="font-size: 0.8rem; line-height: 1.4;">Kit de 4 câmeras IP Full HD/4K de
-                                        alta sensibilidade e instalação física de visão cruzada.</p>
+                                        Mín. 8 Câmeras IP PTZ por Setor</p>
+                                    <p style="font-size: 0.8rem; line-height: 1.4;">Câmeras Full HD/4K com movimentação Pan-Tilt-Zoom, visão noturna IR e instalação física de cobertura cruzada espelhada por área monitorada.</p>
                                 </div>
                                 <div class="closing-card" style="padding: 20px;">
                                     <h3 style="margin-bottom: 5px;">Processamento Nuvem (OpEx)</h3>
@@ -961,7 +966,7 @@
                                         style="font-size: 0.9rem; font-weight: 700; color: var(--primary-red); margin-bottom: 5px;">
                                         Custo Mensal Recorrente</p>
                                     <p style="font-size: 0.8rem; line-height: 1.4;">Manutenção de créditos no Google
-                                        Colab Pro Plus e expansão de armazenamento corporativo.</p>
+                                        Colab Pro Plus e expansão de armazenamento corporativo para evidências.</p>
                                 </div>
                             </div>
                         </div>
@@ -1314,11 +1319,15 @@
                 <div class="note-badge">Slide 12: Processamento</div>
 
                 <p class="note-text">
-                    "Olhando para o futuro e para a continuidade do projeto com a base de 44 mil imagens, analisamos as
-                    opções de viabilidade de processamento. A compra de hardware local de alta performance exigiria um
-                    custo de R$ 8 mil a R$ 15 mil, além de sofrer com rápida obsolescência tecnológica. Portanto,
-                    recomendamos a adoção do modelo híbrido: investimento zero em novos computadores e processamento em
-                    nuvem robusto, o que nos garante agilidade imediata e máquinas sempre atualizadas."
+                    "Para entendermos o que seria necessário para treinar um modelo de IA com mais de 50 mil imagens,
+                    analisamos duas estratégias técnicas com muito cuidado. A primeira opção seria montar uma Workstation
+                    local dedicada: isso exigiria uma GPU NVIDIA compatível com CUDA, como uma RTX 3080 ou A4000, no
+                    mínimo 32 GB de RAM, armazenamento NVMe de alta velocidade, além da instalação de toda a stack de
+                    software como CUDA Toolkit e PyTorch. Além do custo elevado de aquisição, esse hardware sofreria com
+                    rápida obsolescência tecnológica. A segunda opção, que foi a que adotamos e recomendamos, é o modelo
+                    híbrido em nuvem via Google Colab Pro+: acesso sob demanda a GPUs de última geração como a NVIDIA
+                    A100 e V100, suporte a CUDA nativo, escalabilidade instantânea e custo operacional controlado por
+                    sessão de treinamento. Não é preciso comprar nada, só usar."
                 </p>
             </div>
 
@@ -1327,10 +1336,15 @@
                 <div class="note-badge">Slide 13: Infraestrutura</div>
 
                 <p class="note-text">
-                    "Para a aplicação prática e confiabilidade na fábrica, estimamos os custos de infraestrutura local
-                    de câmeras. Um kit com 4 câmeras IP de alta resolução mais cabeamento por setor permite um cinturão
-                    de visão espelhada (frente e costa) para eliminar pontos cegos. Também prevemos o custo operacional
-                    de nuvem recorrente para manter créditos e armazenamento."
+                    "Para cobrir de forma eficiente e sem pontos cegos uma área de produção, a nossa estimativa técnica
+                    é de no mínimo 8 câmeras IP com movimentação PTZ, ou seja, Pan-Tilt-Zoom, por setor monitorado.
+                    PTZ significa que a câmera consegue girar horizontalmente, inclinar verticalmente e dar zoom de
+                    forma motorizada, o que permite rastrear dinamicamente os colaboradores em movimento dentro da
+                    área. Essas câmeras são posicionadas em duplas espelhadas, frente e costa, cada uma cobrindo 180
+                    graus, formando assim um cinturão de visão 360 graus redundante. Isso garante que não exista
+                    nenhum ângulo cego onde um colaborador sem o EPI deixe de ser detectado. Já o custo operacional
+                    de nuvem é recorrente e cobre os créditos de processamento e o armazenamento corporativo das
+                    evidências geradas pelo sistema."
                 </p>
             </div>
 
